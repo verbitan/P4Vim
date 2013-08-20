@@ -17,8 +17,8 @@ if !has('python')
     echohl WarningMsg
     echomsg 'Error: P4Vim requires Vim to be compiled with Python support'
           \ '(+python)'
-    finish
     echohl None
+    finish
 endif
 
 " We've initialised everything.
