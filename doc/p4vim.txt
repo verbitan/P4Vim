@@ -1,0 +1,28 @@
+*p4vim.txt* Perforce plugin for Vim, utilising the P4Python API.
+
+================================================================================
+CONTENTS                                                        *P4Vim-contents*
+
+    1. Intro .............................................. |P4VimIntro|
+    2. Configuration ...................................... |P4VimConfiguration|
+        2.1. P4Vim_disable ................................ |P4Vim_disable|
+
+================================================================================
+1. Intro                                                            *P4VimIntro*
+
+P4Vim lets you interface with Perforce from within Vim, using the P4Python API
+to do so.
+
+================================================================================
+2. Configuration                                            *P4VimConfiguration*
+
+The configuration for P4Vim can be tweaked by setting a few variables in your
+vimrc file.
+
+--------------------------------------------------------------------------------
+2.1. g:P4Vim_disable                                             *P4Vim_disable*
+
+Set this to 1 to disable P4Vim entirely.
+
+Default: 0 (P4Vim is enabled)
+
