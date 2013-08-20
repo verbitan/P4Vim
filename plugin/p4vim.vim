@@ -2,6 +2,7 @@
 " File:        P4Vim.vim
 " Description: Perforce plugin for Vim, utilising the P4Python API.
 " Author:      Nick James
+" License:     The MIT License (MIT)
 " ==============================================================================
 
 " Init {{{
