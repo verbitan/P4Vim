@@ -21,6 +21,19 @@ if !has('python')
     finish
 endif
 
+" Try and load the P4Vim Python module.
+let s:P4Vim_pythonFile = escape(expand('<sfile>:p:h'), '\') .  '/p4vim.py'
+exe 'pyfile ' . s:P4Vim_pythonFile
+python initP4Vim()
+
+" Ensure that the P4Vim Python module initialised ok.
+if exists('s:P4Vim_pythonInitFailure')
+    echohl WarningMsg
+    echomsg 'Error: P4Python not installed'
+    echohl None
+    finish
+endif
+
 " We've initialised everything.
 let g:P4Vim_loaded = 1
 
