@@ -5,7 +5,11 @@ CONTENTS                                                        *P4Vim-contents*
 
     1. Intro .............................................. |P4VimIntro|
     2. Configuration ...................................... |P4VimConfiguration|
-        2.1. P4Vim_disable ................................ |P4Vim_disable|
+        2.1. P4Vim_port ................................... |P4Vim_port|
+        2.2. P4Vim_user ................................... |P4Vim_user|
+        2.3. P4Vim_passwd ................................. |P4Vim_passwd|
+        2.4. P4Vim_client ................................. |P4Vim_client|
+        2.5. P4Vim_disable ................................ |P4Vim_disable|
     3. License ............................................ |P4VimLicense|
 
 ================================================================================
@@ -21,11 +25,43 @@ The configuration for P4Vim can be tweaked by setting a few variables in your
 vimrc file.
 
 --------------------------------------------------------------------------------
-2.1. g:P4Vim_disable                                             *P4Vim_disable*
+2.1. g:P4Vim_port                                                   *P4Vim_port*
+
+Set this to override P4PORT.
+
+Default: (Unset) - The value of P4PORT taken from any P4CONFIG file present,
+                   or from the environment as per the usual Perforce convention.
+
+--------------------------------------------------------------------------------
+2.2. g:P4Vim_user                                                   *P4Vim_user*
+
+Set this to override P4USER.
+
+Default: (Unset) - The value of P4USER taken from any P4CONFIG file present,
+                   or from the environment as per the usual Perforce convention.
+
+--------------------------------------------------------------------------------
+2.3. g:P4Vim_passwd                                               *P4Vim_passwd*
+
+Set this to override P4PASSWD.
+
+Default: (Unset) - The value of P4PASSWD taken from any P4CONFIG file present,
+                   or from the environment as per the usual Perforce convention.
+
+--------------------------------------------------------------------------------
+2.4. g:P4Vim_client                                               *P4Vim_client*
+
+Set this to override P4CLIENT.
+
+Default: (Unset) - The value of P4CLIENT taken from any P4CONFIG file present,
+                   or from the environment as per the usual Perforce convention.
+
+--------------------------------------------------------------------------------
+2.5. g:P4Vim_disable                                             *P4Vim_disable*
 
 Set this to 1 to disable P4Vim entirely.
 
-Default: 0 (P4Vim is enabled)
+Default: (Unset) - P4Vim is enabled.
 
 ================================================================================
 3. License                                                        *P4VimLicense*
