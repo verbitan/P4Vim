@@ -1,3 +1,5 @@
 " Ignore the helptags file.
 doc/tags
 
+" Mac crap.
+.DS_Store
