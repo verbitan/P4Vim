@@ -24,7 +24,6 @@ endif
 " Try and load the P4Vim Python module.
 let s:P4Vim_pythonFile = escape(expand('<sfile>:p:h'), '\') .  '/p4vim.py'
 exe 'pyfile ' . s:P4Vim_pythonFile
-python initP4Vim()
 
 " Ensure that the P4Vim Python module initialised ok.
 if exists('s:P4Vim_pythonInitFailure')
@@ -34,8 +33,23 @@ if exists('s:P4Vim_pythonInitFailure')
     finish
 endif
 
-" We've initialised everything.
+" Ensure that the version of Python is new enough.
+if !exists('s:P4Vim_supportedPython')
+    echohl WarningMsg
+    echomsg 'Error: P4Python requires Python 2.7+'
+    echohl None
+    finish
+endif
+
+" P4Vim has loaded.
 let g:P4Vim_loaded = 1
+
+" }}}
+
+" External Functions {{{
+
+command! -nargs=0 PAdd call p4vim#PAdd()
+command! -nargs=0 PEdit call p4vim#PEdit()
 
 " }}}
 
