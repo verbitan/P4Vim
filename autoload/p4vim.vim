@@ -15,5 +15,12 @@ function! p4vim#PEdit() "{{{
     python P4Vim().Edit()
 endfunction "}}}
 
+function! p4vim#PRevert() "{{{
+    let choice = confirm("Revert file?", "&Yes\n&No", 2, "Question")
+    if choice == 1
+        python P4Vim().Revert()
+    endif
+endfunction "}}}
+
 " }}}
 

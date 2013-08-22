@@ -50,6 +50,7 @@ let g:P4Vim_loaded = 1
 
 command! -nargs=0 PAdd call p4vim#PAdd()
 command! -nargs=0 PEdit call p4vim#PEdit()
+command! -nargs=0 PRevert call p4vim#PRevert()
 
 " }}}
 

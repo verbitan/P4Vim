@@ -1,25 +1,29 @@
 *p4vim.txt* Perforce plugin for Vim, utilising the P4Python API.
 
 ================================================================================
-CONTENTS                                                        *P4Vim-contents*
+CONTENTS                                                        *P4Vim-Contents*
 
-    1. Intro .............................................. |P4VimIntro|
-    2. Configuration ...................................... |P4VimConfiguration|
-        2.1. P4Vim_port ................................... |P4Vim_port|
-        2.2. P4Vim_user ................................... |P4Vim_user|
-        2.3. P4Vim_passwd ................................. |P4Vim_passwd|
-        2.4. P4Vim_client ................................. |P4Vim_client|
-        2.5. P4Vim_disable ................................ |P4Vim_disable|
-    3. License ............................................ |P4VimLicense|
+    1. Intro ............................................. |P4Vim-Intro|
+    2. Configuration ..................................... |P4Vim-Configuration|
+        2.1. P4Vim_port .................................. |P4Vim_port|
+        2.2. P4Vim_user .................................. |P4Vim_user|
+        2.3. P4Vim_passwd ................................ |P4Vim_passwd|
+        2.4. P4Vim_client ................................ |P4Vim_client|
+        2.5. P4Vim_disable ............................... |P4Vim_disable|
+    3. Commands .......................................... |P4Vim-Commands|
+        3.1. PAdd ........................................ |PAdd|
+        3.2. PEdit ....................................... |PEdit|
+        3.3. PRevert ..................................... |PRevert|
+    4. License ........................................... |P4Vim-License|
 
 ================================================================================
-1. Intro                                                            *P4VimIntro*
+1. Intro                                                           *P4Vim-Intro*
 
 P4Vim lets you interface with Perforce from within Vim, using the P4Python API
 to do so.
 
 ================================================================================
-2. Configuration                                            *P4VimConfiguration*
+2. Configuration                                           *P4Vim-Configuration*
 
 The configuration for P4Vim can be tweaked by setting a few variables in your
 vimrc file.
@@ -64,7 +68,31 @@ Set this to 1 to disable P4Vim entirely.
 Default: (Unset) - P4Vim is enabled.
 
 ================================================================================
-3. License                                                        *P4VimLicense*
+3. Commands                                                     *P4Vim-Commands*
+
+The commands used to interface with Perforce from within Vim are defined below.
+These commands are local to the buffers in which they work.
+
+--------------------------------------------------------------------------------
+3.1. PAdd                                                                 *PAdd*
+
+:PAdd                   Opens the current file for add.
+                        Equivalent to running ':!p4 add %'
+
+--------------------------------------------------------------------------------
+3.2. PEdit                                                               *PEdit*
+
+:PEdit                  Opens the current file for edit.
+                        Equivalent to running ':!p4 edit %'
+
+--------------------------------------------------------------------------------
+3.3. PRevert                                                           *PRevert*
+
+:PRevert                Reverts the current file.
+                        Equivalent to running ':!p4 revert %'
+
+================================================================================
+4. License                                                       *P4Vim-License*
 
 The MIT License (MIT)
 
