@@ -5,11 +5,13 @@ CONTENTS                                                        *P4Vim-Contents*
 
     1. Intro ............................................. |P4Vim-Intro|
     2. Configuration ..................................... |P4Vim-Configuration|
-        2.1. P4Vim_port .................................. |P4Vim_port|
-        2.2. P4Vim_user .................................. |P4Vim_user|
-        2.3. P4Vim_passwd ................................ |P4Vim_passwd|
-        2.4. P4Vim_client ................................ |P4Vim_client|
-        2.5. P4Vim_disable ............................... |P4Vim_disable|
+        2.1. P4Vim_disable ............................... |P4Vim_disable|
+        2.2. Perforce Configuration ...................... |P4Vim-P4Config|
+            2.2.1. P4Vim_port ............................ |P4Vim_port|
+            2.2.2. P4Vim_user ............................ |P4Vim_user|
+            2.2.3. P4Vim_passwd .......................... |P4Vim_passwd|
+            2.2.4. P4Vim_client .......................... |P4Vim_client|
+        2.3. P4Vim_noautocmd ............................. |P4Vim_noautocmd|
     3. Commands .......................................... |P4Vim-Commands|
         3.1. PAdd ........................................ |PAdd|
         3.2. PEdit ....................................... |PEdit|
@@ -29,7 +31,19 @@ The configuration for P4Vim can be tweaked by setting a few variables in your
 vimrc file.
 
 --------------------------------------------------------------------------------
-2.1. g:P4Vim_port                                                   *P4Vim_port*
+2.1. g:P4Vim_disable                                             *P4Vim_disable*
+
+Set this to 1 to disable P4Vim entirely.
+
+Default: (Unset) - P4Vim is enabled.
+
+--------------------------------------------------------------------------------
+2.2. Perforce Configuration                                     *P4Vim-P4Config*
+
+Configuration specifically for forging the connection to the Perforce server.
+
+--------------------------------------------------------------------------------
+2.2.1. g:P4Vim_port                                                 *P4Vim_port*
 
 Set this to override P4PORT.
 
@@ -37,7 +51,7 @@ Default: (Unset) - The value of P4PORT taken from any P4CONFIG file present,
                    or from the environment as per the usual Perforce convention.
 
 --------------------------------------------------------------------------------
-2.2. g:P4Vim_user                                                   *P4Vim_user*
+2.2.2. g:P4Vim_user                                                 *P4Vim_user*
 
 Set this to override P4USER.
 
@@ -45,7 +59,7 @@ Default: (Unset) - The value of P4USER taken from any P4CONFIG file present,
                    or from the environment as per the usual Perforce convention.
 
 --------------------------------------------------------------------------------
-2.3. g:P4Vim_passwd                                               *P4Vim_passwd*
+2.2.3. g:P4Vim_passwd                                             *P4Vim_passwd*
 
 Set this to override P4PASSWD.
 
@@ -53,7 +67,7 @@ Default: (Unset) - The value of P4PASSWD taken from any P4CONFIG file present,
                    or from the environment as per the usual Perforce convention.
 
 --------------------------------------------------------------------------------
-2.4. g:P4Vim_client                                               *P4Vim_client*
+2.2.4. g:P4Vim_client                                             *P4Vim_client*
 
 Set this to override P4CLIENT.
 
@@ -61,11 +75,13 @@ Default: (Unset) - The value of P4CLIENT taken from any P4CONFIG file present,
                    or from the environment as per the usual Perforce convention.
 
 --------------------------------------------------------------------------------
-2.5. g:P4Vim_disable                                             *P4Vim_disable*
+2.2. g:P4Vim_noautocmd                                         *P4Vim_noautocmd*
 
-Set this to 1 to disable P4Vim entirely.
+Set this to 1 to disable P4Vim from setting up its autocmds.
+It's highly recommended that you leave this enabled otherwise P4Vim will not
+automatically open a file for edit.
 
-Default: (Unset) - P4Vim is enabled.
+Default: (Unset) - P4Vim loads all its autocmds.
 
 ================================================================================
 3. Commands                                                     *P4Vim-Commands*
