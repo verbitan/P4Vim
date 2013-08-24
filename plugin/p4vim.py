@@ -21,6 +21,8 @@ class P4Vim:
     def __init__(self):
         self.p4 = P4()
 
+        self.p4.prog = "P4Vim"
+
         if ( int(vim.eval("exists('g:P4Vim_port')")) ):
             self.p4.port = vim.eval('g:P4Vim_port')
 
