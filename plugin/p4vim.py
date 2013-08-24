@@ -58,13 +58,16 @@ class P4Vim:
                 print w
 
     def Revert(self):
-        try:
-            self.p4.connect()
-            self.p4.run("revert", vim.current.buffer.name)
-            self.p4.disconnect()
-        except P4Exception:
-            for e in self.p4.errors:
-                print e
-            for w in self.p4.warnings:
-                print w
+        choice = \
+            int(vim.eval('confirm("Revert file?", "&Yes\n&No", 2, "Question")'))
+        if ( choice == 1 ):
+            try:
+                self.p4.connect()
+                self.p4.run("revert", vim.current.buffer.name)
+                self.p4.disconnect()
+            except P4Exception:
+                for e in self.p4.errors:
+                    print e
+                for w in self.p4.warnings:
+                    print w
 
