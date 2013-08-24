@@ -66,6 +66,15 @@ class P4Vim:
                 print w
     # }}}
 
+    def FileChangedRO(self): # {{{
+        self.Edit()
+        self.ForceReloadBuffer()
+    # }}}
+
+    def ForceReloadBuffer(self): # {{{
+        vim.command("e!")
+    # }}}
+
     def Revert(self): # {{{
         choice = \
             int(vim.eval('confirm("Revert file?", "&Yes\n&No", 2, "Question")'))
@@ -74,6 +83,8 @@ class P4Vim:
                 self.p4.connect()
                 self.p4.run("revert", vim.current.buffer.name)
                 self.p4.disconnect()
+                
+                self.ForceReloadBuffer()
             except P4Exception:
                 for e in self.p4.errors:
                     print e

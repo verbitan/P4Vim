@@ -24,8 +24,7 @@ endfunction " }}}
 " Internal Functions {{{
 
 function! p4vim#FileChangedRO() " {{{
-    PEdit
-    e!
+    python P4Vim().FileChangedRO()
 endfunction " }}}
 
 " }}}
