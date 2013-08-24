@@ -6,7 +6,7 @@
 " ==============================================================================
 
 " External Functions {{{
-"
+
 function! p4vim#PAdd() "{{{
     python P4Vim().Add()
 endfunction "}}}
@@ -20,6 +20,15 @@ function! p4vim#PRevert() "{{{
     if choice == 1
         python P4Vim().Revert()
     endif
+endfunction "}}}
+
+" }}}
+
+" Internal Functions {{{
+
+function! p4vim#FileChangedRO() "{{{
+    PEdit
+    e!
 endfunction "}}}
 
 " }}}

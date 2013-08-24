@@ -54,3 +54,13 @@ command! -nargs=0 PRevert call p4vim#PRevert()
 
 " }}}
 
+" Autocommands {{{
+
+augroup P4Vim
+    autocmd!
+
+    autocmd FileChangedRO * call p4vim#FileChangedRO()
+augroup END
+
+" }}}
+
