@@ -7,26 +7,26 @@
 
 " External Functions {{{
 
-function! p4vim#PAdd() "{{{
+function! p4vim#PAdd() " {{{
     python P4Vim().Add()
-endfunction "}}}
+endfunction " }}}
 
-function! p4vim#PEdit() "{{{
+function! p4vim#PEdit() " {{{
     python P4Vim().Edit()
-endfunction "}}}
+endfunction " }}}
 
-function! p4vim#PRevert() "{{{
+function! p4vim#PRevert() " {{{
     python P4Vim().Revert()
-endfunction "}}}
+endfunction " }}}
 
 " }}}
 
 " Internal Functions {{{
 
-function! p4vim#FileChangedRO() "{{{
+function! p4vim#FileChangedRO() " {{{
     PEdit
     e!
-endfunction "}}}
+endfunction " }}}
 
 " }}}
 

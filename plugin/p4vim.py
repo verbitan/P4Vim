@@ -5,6 +5,8 @@
 # License:     The MIT License (MIT)
 # ==============================================================================
 
+# Imports {{{
+
 import vim
 import sys
 
@@ -17,8 +19,12 @@ try:
 except ImportError, e:
     vim.command('let s:P4Vim_pythonInitFailure = 1')
 
+# }}}
+
+# P4Vim {{{
+
 class P4Vim:
-    def __init__(self):
+    def __init__(self): # {{{
         self.p4 = P4()
 
         self.p4.prog = "P4Vim"
@@ -34,8 +40,9 @@ class P4Vim:
 
         if ( int(vim.eval("exists('g:P4Vim_client')")) ):
             self.p4.client = vim.eval('g:P4Vim_client')
+    # }}}
 
-    def Add(self):
+    def Add(self): # {{{
         try:
             self.p4.connect()
             self.p4.run("add", vim.current.buffer.name)
@@ -45,8 +52,9 @@ class P4Vim:
                 print e
             for w in self.p4.warnings:
                 print w
+    # }}}
 
-    def Edit(self):
+    def Edit(self): # {{{
         try:
             self.p4.connect()
             self.p4.run("edit", vim.current.buffer.name)
@@ -56,8 +64,9 @@ class P4Vim:
                 print e
             for w in self.p4.warnings:
                 print w
+    # }}}
 
-    def Revert(self):
+    def Revert(self): # {{{
         choice = \
             int(vim.eval('confirm("Revert file?", "&Yes\n&No", 2, "Question")'))
         if ( choice == 1 ):
@@ -70,4 +79,7 @@ class P4Vim:
                     print e
                 for w in self.p4.warnings:
                     print w
+    # }}}
+
+# }}}
 
