@@ -12,6 +12,7 @@ CONTENTS                                                        *P4Vim-Contents*
             2.2.3. P4Vim_passwd .......................... |P4Vim_passwd|
             2.2.4. P4Vim_client .......................... |P4Vim_client|
         2.3. P4Vim_noautocmd ............................. |P4Vim_noautocmd|
+        2.4. P4Vim_confirmations ......................... |P4Vim_confirmations|
     3. Commands .......................................... |P4Vim-Commands|
         3.1. PAdd ........................................ |PAdd|
         3.2. PEdit ....................................... |PEdit|
@@ -83,6 +84,17 @@ It's highly recommended that you leave this enabled otherwise P4Vim will not
 automatically open a file for edit.
 
 Default: (Unset) - P4Vim loads all its autocmds.
+
+--------------------------------------------------------------------------------
+2.4. g:P4Vim_confirmations                                 *P4Vim_confirmations*
+
+Controls the level of confirmations.
+
+  0 - All confirmations are displayed.
+  1 - Only confirmations for irreversable actions are displayed (e.g. PRevert).
+  2 - No confirmations are displayed at all. Not reccomended!
+
+Default: 1
 
 ================================================================================
 3. Commands                                                     *P4Vim-Commands*

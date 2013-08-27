@@ -54,6 +54,18 @@ class P4Vim:
                 print w
     # }}}
 
+    def ConfirmationYesNo(self, confirmationLevel, msg): # {{{
+        confirmed = True
+        cfgLevel = int(vim.eval('g:P4Vim_confirmations'))
+
+        if ( confirmationLevel >= cfgLevel ):
+            evalString = 'confirm("%s", "&Yes\n&No", 2, "Question")' % msg
+            if ( int(vim.eval(evalString)) == 2):
+                confirmed = False
+
+        return confirmed
+    # }}}
+
     def Edit(self): # {{{
         try:
             self.p4.connect()
@@ -76,9 +88,8 @@ class P4Vim:
     # }}}
 
     def Revert(self): # {{{
-        choice = \
-            int(vim.eval('confirm("Revert file?", "&Yes\n&No", 2, "Question")'))
-        if ( choice == 1 ):
+        choice = self.ConfirmationYesNo(1, "Revert file?")
+        if ( choice == True ):
             try:
                 self.p4.connect()
                 self.p4.run("revert", vim.current.buffer.name)

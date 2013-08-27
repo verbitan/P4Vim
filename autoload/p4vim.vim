@@ -5,6 +5,14 @@
 " License:     The MIT License (MIT)
 " ==============================================================================
 
+" Default Settings {{{
+
+if !exists('g:P4Vim_confirmations') " {{{
+    let g:P4Vim_confirmations = 1
+endif " }}}
+
+" }}}
+
 " External Functions {{{
 
 function! p4vim#PAdd() " {{{
