@@ -76,7 +76,7 @@ Default: (Unset) - The value of P4CLIENT taken from any P4CONFIG file present,
                    or from the environment as per the usual Perforce convention.
 
 --------------------------------------------------------------------------------
-2.2. g:P4Vim_noautocmd                                         *P4Vim_noautocmd*
+2.3. g:P4Vim_noautocmd                                         *P4Vim_noautocmd*
 
 Set this to 1 to disable P4Vim from setting up its autocmds.
 It's highly recommended that you leave this enabled otherwise P4Vim will not
